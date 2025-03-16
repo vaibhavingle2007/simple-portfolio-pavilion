@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import SplineBackground from "./SplineBackground";
 
 const Hero = () => {
+  // The SplineBackground is now only used in the welcome page
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 relative">
       <SplineBackground />
