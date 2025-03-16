@@ -13,7 +13,7 @@ const SplineBackground = () => {
         </div>
       )}
       <Spline
-        scene="https://prod.spline.design/3d83ec058b8e59965a3a805f40a1bb58/scene.splinecode"
+        scene="https://my.spline.design/100followers-69c1d52e1cf67bac2352ffd258cc1ef9/scene.splinecode"
         onLoad={() => setLoading(false)}
         className="h-full w-full"
       />
