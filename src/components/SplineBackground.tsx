@@ -21,6 +21,7 @@ const SplineBackground: React.FC<SplineBackgroundProps> = ({ scale = 1 }) => {
 
   const handleLoad = () => {
     setIsLoaded(true);
+    console.log("Spline scene loaded successfully");
   };
 
   return (
@@ -32,7 +33,7 @@ const SplineBackground: React.FC<SplineBackgroundProps> = ({ scale = 1 }) => {
         style={{ transform: `scale(${scale})` }}
       >
         <Spline 
-          scene="https://prod.spline.design/PkH8dwN9DA9fM-Mv/scene.splinecode" 
+          scene="https://prod.spline.design/r7kQFZsqQ4HiXi1Y/scene.splinecode" 
           onLoad={handleLoad}
         />
       </div>
