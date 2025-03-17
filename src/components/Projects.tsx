@@ -37,26 +37,26 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-secondary/30">
-      <div className="section-container">
-        <div className="mb-16 text-center max-w-3xl mx-auto">
+    <section id="projects" className="bg-secondary/30 py-16 md:py-20">
+      <div className="section-container px-4 md:px-6">
+        <div className="mb-10 md:mb-16 text-center max-w-3xl mx-auto">
           <Badge variant="outline" className="mb-3">
             My Work
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-medium mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4">
             Selected Projects
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-sm md:text-base text-muted-foreground">
             A curated selection of my recent work, showcasing my design philosophy
             and development skills.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project) => (
             <Card key={project.id} className="overflow-hidden border bg-card transition-all duration-300 hover:shadow-md">
               <div className={`aspect-video ${project.imagePlaceholder} transition-transform duration-500 hover:scale-105`} />
-              <CardContent className="p-6">
+              <CardContent className="p-4 md:p-6">
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.tags.map((tag) => (
                     <Badge variant="secondary" key={tag} className="font-normal text-xs">
@@ -64,7 +64,7 @@ const Projects = () => {
                     </Badge>
                   ))}
                 </div>
-                <h3 className="text-xl font-medium mb-2">{project.title}</h3>
+                <h3 className="text-lg md:text-xl font-medium mb-2">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                 <a 
                   href="#" 
