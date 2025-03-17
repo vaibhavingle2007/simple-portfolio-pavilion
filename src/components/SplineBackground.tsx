@@ -1,47 +1,22 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Spline from "@splinetool/react-spline";
 
-interface SplineBackgroundProps {
-  scale?: number;
-}
-
-const SplineBackground: React.FC<SplineBackgroundProps> = ({ scale = 1 }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!isLoaded) {
-        console.log("Spline is taking a while to load...");
-      }
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, [isLoaded]);
-
-  const handleLoad = () => {
-    setIsLoaded(true);
-    console.log("Spline scene loaded successfully");
-  };
+const SplineBackground = () => {
+  const [loading, setLoading] = useState(true);
 
   return (
-    <div className="absolute inset-0 w-full h-full -z-10">
-      <div 
-        className={`w-full h-full transition-opacity duration-1000 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ transform: `scale(${scale})` }}
-      >
-        <Spline 
-          scene="https://prod.spline.design/r7kQFZsqQ4HiXi1Y/scene.splinecode" 
-          onLoad={handleLoad}
-        />
-      </div>
-      {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+    <div className="absolute inset-0 -z-10 overflow-hidden">
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-background/80">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
         </div>
       )}
+      <Spline
+        scene="https://my.spline.design/100followers-69c1d52e1cf67bac2352ffd258cc1ef9/scene.splinecode"
+        onLoad={() => setLoading(false)}
+        className="h-full w-full"
+      />
     </div>
   );
 };
