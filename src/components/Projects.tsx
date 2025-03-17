@@ -2,6 +2,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Github } from "lucide-react";
 
 interface Project {
   id: number;
@@ -9,6 +10,7 @@ interface Project {
   description: string;
   tags: string[];
   imagePlaceholder: string;
+  githubUrl?: string; // Added optional GitHub repository URL
 }
 
 const projects: Project[] = [
@@ -17,21 +19,24 @@ const projects: Project[] = [
     title: "Minimal E-commerce Platform",
     description: "A clean shopping experience with focus on typography and whitespace",
     tags: ["Design", "Development", "E-commerce"],
-    imagePlaceholder: "bg-gray-200"
+    imagePlaceholder: "bg-gray-200",
+    githubUrl: "https://github.com/username/ecommerce-platform"
   },
   {
     id: 2,
     title: "Productivity Dashboard",
     description: "Intuitive interface for tracking daily tasks and goals",
     tags: ["UI/UX", "Web App", "React"],
-    imagePlaceholder: "bg-gray-300"
+    imagePlaceholder: "bg-gray-300",
+    githubUrl: "https://github.com/username/productivity-dashboard"
   },
   {
     id: 3,
     title: "Travel Journal Application",
     description: "Simple, elegant way to document travel experiences",
     tags: ["Mobile", "Design", "Photography"],
-    imagePlaceholder: "bg-gray-400"
+    imagePlaceholder: "bg-gray-400",
+    githubUrl: "https://github.com/username/travel-journal"
   }
 ];
 
@@ -66,12 +71,26 @@ const Projects = () => {
                 </div>
                 <h3 className="text-lg md:text-xl font-medium mb-2">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                <a 
-                  href="#" 
-                  className="text-sm font-medium text-primary inline-flex items-center transition-colors hover:text-primary/80"
-                >
-                  View Project
-                </a>
+                <div className="flex items-center gap-3">
+                  <a 
+                    href="#" 
+                    className="text-sm font-medium text-primary inline-flex items-center transition-colors hover:text-primary/80"
+                  >
+                    View Project
+                  </a>
+                  
+                  {project.githubUrl && (
+                    <a 
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label={`GitHub repository for ${project.title}`}
+                    >
+                      <Github size={18} />
+                    </a>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}
