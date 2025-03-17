@@ -3,11 +3,16 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import SplineBackground from "./SplineBackground";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section className="min-h-screen flex items-center justify-center pt-12 md:pt-20 relative">
-      <SplineBackground />
+      <div className="absolute inset-0 overflow-hidden">
+        <SplineBackground scale={isMobile ? 0.65 : 1} />
+      </div>
       
       <div className="section-container relative z-10 px-4 md:px-6">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
