@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -20,7 +19,7 @@ const projects: Project[] = [
     description: "A clean shopping experience with focus on typography and whitespace",
     tags: ["Design", "Development", "E-commerce"],
     imagePlaceholder: "bg-gray-200",
-    githubUrl: "https://github.com/username/ecommerce-platform"
+    githubUrl: "https://github.com/vaibhavingle2007/Basic-java-To-Do_apllication.git"
   },
   {
     id: 2,
