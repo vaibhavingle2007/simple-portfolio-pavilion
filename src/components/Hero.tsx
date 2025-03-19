@@ -15,8 +15,8 @@ const Hero = () => {
             Welcome to my portfolio
           </span>
           
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-medium mb-4 md:mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Designer & Developer crafting minimal digital experiences
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-medium mb-4 md:mb-6 animate-fade-in font-display tracking-tighter" style={{ animationDelay: "0.1s" }}>
+            Creating minimal digital experiences
           </h1>
           
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
