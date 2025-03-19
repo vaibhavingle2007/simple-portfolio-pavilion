@@ -6,7 +6,7 @@ import SplineBackground from "./SplineBackground";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-12 md:pt-20 relative">
+    <section className="min-h-screen flex items-center justify-center pt-12 md:pt-20 relative overflow-hidden">
       <SplineBackground />
       
       <div className="section-container relative z-10 px-4 md:px-6">
