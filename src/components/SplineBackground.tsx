@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import Spline from "@splinetool/react-spline";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const SplineBackground = () => {
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,7 @@ const SplineBackground = () => {
         </div>
       )}
       <Spline
-        scene="https://my.spline.design/100followers-69c1d52e1cf67bac2352ffd258cc1ef9/scene.splinecode"
+        scene="https://my.spline.design/cutecomputerfollowcursor-7776ea0cca274a8cfcfa567ae6a2d670/"
         onLoad={() => setLoading(false)}
         className="h-full w-full"
       />
